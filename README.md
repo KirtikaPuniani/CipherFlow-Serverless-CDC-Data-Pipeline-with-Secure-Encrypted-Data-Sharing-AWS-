@@ -58,5 +58,7 @@ This enforces encryption without decryption rights for the pipeline.
 
 
 **CipherFlow: Serverless CDC Pipeline on AWS**
+
+
 <img width="1536" height="1024" alt="Serverless CDC Pipeline on AWS" src="https://github.com/user-attachments/assets/b171acd6-0921-4809-951c-9c1d5ebd8a0d" />
 
