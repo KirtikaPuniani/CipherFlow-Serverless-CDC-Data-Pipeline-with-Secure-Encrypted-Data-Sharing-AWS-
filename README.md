@@ -32,19 +32,20 @@ CipherFlow addresses these problems using:
 
 ## 🏗️ Architecture Overview
 
-   Database (PostgreSQL)
-        │
-        ▼
-   AWS DMS (CDC Stream)
-        │
-        ▼
-   AWS Lambda (Merge + Encrypt)
-        │
-        ▼
-      Amazon S3
-        │
-        ▼
-   Client (KMS Decrypt)
+      Database (PostgreSQL)
+              │
+              ▼
+      AWS DMS (CDC Stream)
+              │
+              ▼
+      AWS Lambda (Merge + Encrypt)
+              │
+              ▼
+          Amazon S3
+              │
+              ▼
+      Client (KMS Decrypt)
+
 
    <img width="1536" height="1024" alt="Serverless CDC Pipeline on AWS" src="https://github.com/user-attachments/assets/3a087803-94a6-43a2-9d56-39cdbc4e95a5" />
 
@@ -64,13 +65,13 @@ CipherFlow addresses these problems using:
 
 ## 🔐 Security Design (Key Highlight)
 
-| Pipeline Role | Client Role |
-|---------------|-------------|
-| `kms:Encrypt` only | `kms:Decrypt` only |
-| Cannot read data | Can decrypt data |
+|      Pipeline Role    |        Client Role         |
+|-----------------------|----------------------------|
+| `kms:Encrypt` only    | `kms:Decrypt` only         |
+| Cannot read data      | Can decrypt data           |
 | No private key access | Private key access via KMS |
 
-> This ensures encryption without decryption capability for the pipeline.
+_> This ensures encryption without decryption capability for the pipeline._
 
 ### Why Not Fernet or PGP?
 
