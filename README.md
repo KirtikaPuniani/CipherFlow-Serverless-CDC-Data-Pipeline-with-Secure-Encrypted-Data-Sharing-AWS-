@@ -52,5 +52,5 @@ Client IAM role uses KMS private key to decrypt the data key and access the file
 1. kms:Decrypt only
 2. Can decrypt data
 3. Private key access via KMS
-4. 
+
 This enforces encryption without decryption rights for the pipeline.
