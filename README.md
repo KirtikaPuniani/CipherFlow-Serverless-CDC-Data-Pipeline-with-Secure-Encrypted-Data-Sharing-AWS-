@@ -42,9 +42,15 @@ The data key is encrypted using AWS KMS asymmetric public key.
 Encrypted CSV + encrypted data key are uploaded to S3.
 Client IAM role uses KMS private key to decrypt the data key and access the file.
 
-**🔐 Security Design
-**Pipeline Role**	           |      **Client Role**
-kms:Encrypt only	           |      kms:Decrypt only
-Cannot read data	           |      Can decrypt data
-No private key access        | 	    Private key access via KMS
+**🔐 Security Design**
+**Pipeline Role**	           
+1. kms:Encrypt only	           
+2. Cannot read data
+3. No private key access 
+
+**Client Role**
+1. kms:Decrypt only
+2. Can decrypt data
+3. Private key access via KMS
+4. 
 This enforces encryption without decryption rights for the pipeline.
