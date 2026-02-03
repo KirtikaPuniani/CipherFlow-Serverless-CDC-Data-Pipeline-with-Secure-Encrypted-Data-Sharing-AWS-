@@ -63,7 +63,7 @@ CipherFlow addresses these problems using:
 
 ---
 
-## 🔐 Security Design (Key Highlight)
+## 🔐 Security Design (Key Highlights)
 
 |      Pipeline Role    |        Client Role         |
 |-----------------------|----------------------------|
