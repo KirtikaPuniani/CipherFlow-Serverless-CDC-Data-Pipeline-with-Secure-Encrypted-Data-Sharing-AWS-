@@ -10,7 +10,7 @@ s3 = boto3.client('s3')
 
 bucket = os.environ.get('cipherflow-secure-bucket')
 master_key = "master/master_key.csv"
-cdc_key = "encrypted"
+cdc_key = "encrypted/"
 primary_key = "id"
 
 def load_csv_from_s3():
@@ -52,7 +52,7 @@ def lambda_handler(event, context):
     #upload encrypted master file back to S3
     s3.put_object(
         Bucket=bucket,
-        Key=f"{OUTPUT_PREFIX}data_key_encrypted.bin",
+        Key=f"{cdc_key}data_key_encrypted.bin",
         Body=encrypted_data_key,
         Metadata={
             'x-amz-meta-encrypted-data-key': encrypted_data_key.hex()
