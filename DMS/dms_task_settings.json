@@ -1,0 +1,12 @@
+{
+    "TargetMetadata":{
+        "TargetSchema": "",
+        "SupportsLobs": true
+    },
+    "FullLoadSettings":{
+        "TargetTablePrepMode":"DO_NOTHING"
+    },
+    "Logging":{
+        "EnableLogging": true
+    }
+}

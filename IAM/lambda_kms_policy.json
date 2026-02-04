@@ -1,0 +1,8 @@
+{
+    "Effect": "Allow",
+    "Action": [
+        "kms:GenerateDataKey",
+        "kms:Encrypt"
+    ],
+    "Resource": "*"
+}
