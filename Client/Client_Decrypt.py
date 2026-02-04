@@ -42,7 +42,7 @@ def decrypt_bytes(encrypted_data: bytes, data_key: bytes) -> bytes:
 
 
 def main():
-    # 1️⃣ Download encrypted files from S3
+    #Download encrypted files from S3
     encrypted_file = s3.get_object(
         Bucket=BUCKET_NAME,
         Key="encrypted/data_encrypted.bin"
@@ -53,13 +53,13 @@ def main():
         Key="encrypted/data_key_encrypted.bin"
     )["Body"].read()
 
-    # 2️⃣ Decrypt data key via KMS
+    #Decrypt data key via KMS
     data_key = decrypt_data_key(encrypted_key_blob)
 
-    # 3️⃣ Decrypt CSV data
+    #Decrypt CSV data
     decrypted_csv = decrypt_bytes(encrypted_file, data_key)
 
-    # 4️⃣ Save locally
+    #Save file locally
     with open("decrypted_output.csv", "wb") as f:
         f.write(decrypted_csv)
 
