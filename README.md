@@ -1,10 +1,5 @@
 # 🔐 CipherFlow
 
-
-
-
-
-
 ### Serverless CDC Data Pipeline with Secure Encrypted Data Sharing on AWS
 
 CipherFlow is a **cloud-native, serverless Change Data Capture (CDC) pipeline** that processes incremental database changes and securely distributes **encrypted data snapshots** to external consumers via Amazon S3.
