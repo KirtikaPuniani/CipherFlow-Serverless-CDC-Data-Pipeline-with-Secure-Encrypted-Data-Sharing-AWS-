@@ -19,10 +19,6 @@ Traditional batch pipelines:
 
 ---
 
-
-
-
-
 ## ✅ CipherFlow Solution
 
 CipherFlow addresses these problems using:
